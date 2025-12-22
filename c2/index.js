@@ -217,6 +217,50 @@ const ocenkitStudent = studenti.map((s) => {
   };
 });
 
+//! Kopiranje na array
+const array1 = [2, 5, 7, 8, 9, 1];
+const array2 = [6, 2, 3, 7, 1, 9, 8];
+const array3 = [...array1, ...array2, 10, 11, 12];
+console.log(array3);
+
+const obj1 = {
+  item1: "First",
+  item2: "second",
+};
+
+const test = {
+  ...obj1,
+};
+
+const newObject = {
+  ...obj1,
+  item3: "third",
+};
+
+console.log(newObject);
+
+//! Destruction on Array (Razlozuvanje)
+
+const arr1 = [1, 3, 7];
+const [a, b, c] = arr1;
+console.log(a);
+
+const arr2 = [50, 100, 200, 300, 500];
+const [element, element2, ...remaningElements] = arr2;
+console.log(element);
+console.log(element2);
+console.log(remaningElements);
+
+//! Destruction on Objects
+
+const myObjects = { produkt: "Smoki", cena: 500, kolicina: 120, zemjaNaPoteklo: "Rumunija" };
+const { produkt: nashTermin, cena: prodaznacena } = myObjects;
+console.log(nashTermin, prodaznacena);
+
+console.log(
+  `Vo republika Makedonija produktot ${nashTermin} momentalno se prodava so ovaa cena ${prodaznacena} izos vo denari`
+);
+
 //? Домашна
 //? 1. Сите студенти од Скопје чие име завршува на а и имаат просек над 7, подредени по име (растечки).
 //? 2. Сите студенти кои имаат просек над 9 и не се од Скопје, подредени по просек опаѓачки.
