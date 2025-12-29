@@ -1,0 +1,1 @@
+Welcome from FS module in Node.js
