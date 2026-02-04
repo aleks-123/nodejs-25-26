@@ -55,4 +55,6 @@ app.listen(10000, (err) => {
   console.log("Service started on port 10000");
 });
 
-//?
+//? ZA DOMASHNA
+//? Da se kreira JSON fajl i da se koristi namesto data vo app.js
+//? Da se implementira delete kopce na sekoja kolona vo tabelata studenti i pri klik da se brishe soodvetniot student
