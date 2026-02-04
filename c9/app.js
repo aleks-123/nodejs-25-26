@@ -6,15 +6,19 @@
 //*EJS (Embedded JavaScript templating)
 const express = require("express");
 
+// req.header
+// req.body
+
 const app = express();
 app.set("view engine", "ejs");
+app.use(express.urlencoded({ extended: true }));
 
 const testData = {
   data: "This is data",
   data1: "This is data1",
 };
 
-const data = {
+let data = {
   ime: "Pero",
   prezime: "Peroski",
   niza: ["Skopje", "Bitola", "Kumanovo", "Tetovo", "Ohrid", "Veles"],
@@ -35,7 +39,20 @@ app.get("/", (req, res) => {
   res.render("index", data);
 });
 
+app.post("/", (req, res) => {
+  const newStudent = {
+    ime: req.body.ime,
+    prezime: req.body.prezime,
+    prosek: req.body.prosek,
+  };
+
+  data.studenti.push(newStudent);
+  res.render("index", data);
+});
+
 app.listen(10000, (err) => {
   if (err) return console.log(err.message);
   console.log("Service started on port 10000");
 });
+
+//?
