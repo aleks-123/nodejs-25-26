@@ -58,3 +58,4 @@ app.listen(10000, (err) => {
 //? ZA DOMASHNA
 //? Da se kreira JSON fajl i da se koristi namesto data vo app.js
 //? Da se implementira delete kopce na sekoja kolona vo tabelata studenti i pri klik da se brishe soodvetniot student
+//? MVC ARHITEKTURA JSON => MODEL
