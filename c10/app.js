@@ -11,9 +11,7 @@ app.use(express.static("public"));
 app.get("/form", formular.getForm);
 app.post("/form", formular.postForm);
 app.get("/studenti", formular.getStudenti);
-app.get("/brishi/:", formular.getBrishi);
-
-const model = require("../models/studenti");
+app.get("/brishi/:i", formular.getBrishi);
 
 app.listen(10000, (err) => {
   if (err) return console.log(error.message);

@@ -29,8 +29,11 @@ const list = async () => {
 };
 
 const add = async (data) => {
+  console.log(data);
   const file = await this.fileRead();
+  console.log(file);
   const fileData = JSON.parse(file);
+  console.log(fileData);
   fileData.push(data);
   const jsonData = JSON.stringify(fileData);
   await fileWrite(jsonData);

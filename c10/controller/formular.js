@@ -12,11 +12,13 @@ const postForm = async (req, res) => {
       prosek: req.body.prosek,
     };
 
+    console.log(data);
+
     await studenti.add(data);
 
     res.redirect("/studenti");
   } catch (err) {
-    res.send("Imate greska");
+    res.send(err.message);
   }
 };
 
