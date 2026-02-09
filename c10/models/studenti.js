@@ -30,7 +30,7 @@ const list = async () => {
 
 const add = async (data) => {
   console.log(data);
-  const file = await this.fileRead();
+  const file = await fileRead();
   console.log(file);
   const fileData = JSON.parse(file);
   console.log(fileData);
@@ -42,7 +42,7 @@ const add = async (data) => {
 const remove = async (i) => {
   console.log(i);
   i = Number(i);
-  const file = await this.fileRead();
+  const file = await fileRead();
   const fileData = JSON.parse(file);
   const newFilterData = fileData.filter((_, index) => index !== i);
   await writeFile(JSON.stringify(newFilterData));

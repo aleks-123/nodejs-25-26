@@ -1,13 +1,1 @@
-[
-  { "ime": "Aleksandar", "prezime": "Aleksandroski", "prosek": "22" },
-  {
-    "ime": "Zoran",
-    "prezime": "Zoranoski",
-    "prosek": "23"
-  },
-  {
-    "ime": "Monika",
-    "prezime": "Monikoska",
-    "prosek": "32"
-  }
-]
+[{"ime":"Aleksandar","prezime":"Aleksandroski","prosek":"22"},{"ime":"Zoran","prezime":"Zoranoski","prosek":"23"},{"ime":"Monika","prezime":"Monikoska","prosek":"32"},{"ime":"aleks","prezime":"aleks","prosek":"200"}]
