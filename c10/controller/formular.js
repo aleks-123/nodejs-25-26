@@ -1,21 +1,47 @@
-const fileRead = () => {
-  return new Promise((success, fail) => {
-    fs.readFile(DATA_SOURCE, "utf8", (err, data) => {
-      if (err) {
-        return fail(err.message);
-      }
-      return success(data);
-    });
-  });
+const studenti = require("../models/studenti");
+
+const getForm = (req, res) => {
+  res.render("formular");
 };
-// const file = await this.fileRead();
-// const fileData = JSON.parse(file);
-// fileData.push(data);
-// const jsonData = JSON.stringify(fileData);
 
 const postForm = async (req, res) => {
-  const data = req.body;
+  try {
+    const data = {
+      ime: req.body.ime,
+      prezime: req.body.prezime,
+      prosek: req.body.prosek,
+    };
 
-  await model.add(data);
-  res.redirect("/studenti");
+    await studenti.add(data);
+
+    res.redirect("/studenti");
+  } catch (err) {
+    res.send("Imate greska");
+  }
+};
+
+const getStudenti = async (req, res) => {
+  try {
+    const data = await studenti.list();
+    res.render("studenti", { data });
+  } catch (err) {
+    res.send("Greska 505");
+  }
+};
+
+const getBrishi = async (req, res) => {
+  try {
+    const vrednost = req.params.i;
+    await studenti.remove(+vrednost);
+    res.redirect("/studenti");
+  } catch (err) {
+    res.send("Greska 505");
+  }
+};
+
+module.exports = {
+  getForm,
+  postForm,
+  getStudenti,
+  getBrishi,
 };

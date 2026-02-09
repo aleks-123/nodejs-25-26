@@ -1,4 +1,3 @@
-const { table } = require("console");
 const fs = require("fs");
 
 const DATA_SOURCE = `${__dirname}/../studenti.json`;
